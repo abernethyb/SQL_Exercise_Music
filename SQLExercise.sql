@@ -3,13 +3,19 @@
 --The result should display the album title and the duration.
 
 
-SELECT Title, MAX(AlbumLength) AS Duration--, MAX(a.AlbumLength) AS Duration
-FROM Album
-WHERE AlbumLength = MAX(AlbumLength)
-GROUP BY title, AlbumLength HAVING AlbumLength = MAX(AlbumLength);
---GROUP BY a.AlbumLength, a.Title HAVING MAX(a.AlbumLength) = MAX(a.AlbumLength);
+SELECT AlbumLength,
+	     title
+	FROM Album
+	WHERE AlbumLength = (SELECT MAX(AlbumLength) FROM Album)
 
---SELECT * FROM Album
+
+--SELECT Title, MAX(AlbumLength) AS Duration--, MAX(a.AlbumLength) AS Duration
+--FROM Album
+--WHERE AlbumLength = MAX(AlbumLength)
+--GROUP BY title, AlbumLength HAVING AlbumLength = MAX(AlbumLength);
+----GROUP BY a.AlbumLength, a.Title HAVING MAX(a.AlbumLength) = MAX(a.AlbumLength);
+
+----SELECT * FROM Album
 
 
 
