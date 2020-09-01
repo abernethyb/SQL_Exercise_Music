@@ -1,13 +1,36 @@
 ﻿
+--Write a SELECT statement to display how many songs exist for each genre. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+
+
+
+
+
+
+--Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+
+--SELECT COUNT(ArtistId), ArtistId
+--FROM song
+--GROUP BY ArtistId;
+
+
+--select * FROM song;
+
+--Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+
+--SELECT COUNT(a.Title), a.Title
+--FROM Song s
+--LEFT JOIN Album a on s.AlbumId = a.Id
+--GROUP BY a.Title;
+
 --Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
 
-SELECT s.Title,
-       b.title,
-       a.ArtistName
-  FROM Song s
-       LEFT JOIN Artist a on s.ArtistId = a.id
-       LEFT JOIN Album b on s.AlbumId = b.Id
-      WHERE a.Id = 28;
+--SELECT s.Title,
+--       b.title,
+--       a.ArtistName
+--  FROM Song s
+--       LEFT JOIN Artist a on s.ArtistId = a.id
+--       LEFT JOIN Album b on s.AlbumId = b.Id
+--      WHERE a.Id = 28;
 
 --SELECT * FROM Song;
 
