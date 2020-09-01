@@ -1,7 +1,36 @@
 ﻿
+--Using MAX() function, write a select statement to find the album with the longest duration. 
+--The result should display the album title and the duration.
+
+
+SELECT Title, MAX(AlbumLength) AS Duration--, MAX(a.AlbumLength) AS Duration
+FROM Album
+WHERE AlbumLength = MAX(AlbumLength)
+GROUP BY title, AlbumLength HAVING AlbumLength = MAX(AlbumLength);
+--GROUP BY a.AlbumLength, a.Title HAVING MAX(a.AlbumLength) = MAX(a.AlbumLength);
+
+--SELECT * FROM Album
+
+
+
+--Write a SELECT query that lists the Artists that have put out records on more than one record label.
+--Hint: When using GROUP BY instead of using a WHERE clause, use the HAVING keyword
+
+
+--SELECT ArtistId
+--FROM Album
+--GROUP BY ArtistId
+--HAVING COUNT(Label) > 1;
+
+
+
+
 --Write a SELECT statement to display how many songs exist for each genre. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
 
+--SELECT COUNT(GenreId), GenreId
+--FROM song
+--GROUP BY GenreId;
 
 
 
@@ -13,7 +42,6 @@
 --GROUP BY ArtistId;
 
 
---select * FROM song;
 
 --Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
 
